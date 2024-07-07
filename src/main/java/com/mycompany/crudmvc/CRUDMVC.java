@@ -4,6 +4,11 @@
 
 package com.mycompany.crudmvc;
 
+import com.mycompany.crudmvc.controlador.ControladorProducto;
+import com.mycompany.crudmvc.modelo.ConsultasProducto;
+import com.mycompany.crudmvc.modelo.Producto;
+import com.mycompany.crudmvc.vista.frmProducto;
+
 /**
  *
  * @author brizu
@@ -11,6 +16,12 @@ package com.mycompany.crudmvc;
 public class CRUDMVC {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Producto mod =new Producto();
+        ConsultasProducto modConsultasProducto= new ConsultasProducto();
+        frmProducto frm = new frmProducto();
+         
+        ControladorProducto cntrl = new ControladorProducto(mod, modConsultasProducto, frm);
+        cntrl.iniciar();
+        frm.setVisible(true);
     }
 }

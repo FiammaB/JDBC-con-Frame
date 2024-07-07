@@ -13,16 +13,17 @@ import java.util.logging.Logger;
 /**
  *
  * @author brizu
+ * 
  */
 public class Conexion {
     private final String base = "jdbctienda";
     private  final String user = "root";
     private  final String password = "mysql";    
-    private  final String url = "jdbc:mysql://localhost:3306" +base;
+    private  final String url = "jdbc:mysql://localhost:3306/" +base;
     private  Connection connection=null;
     public  Connection getConnection(){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection= (Connection)DriverManager.getConnection(this.url, this.user, this.password);
         } catch (SQLException e) {
             System.err.println(e);
